@@ -1,0 +1,1 @@
+function ad_go(){window.location.href="http://nflscorebot.github.com"}
