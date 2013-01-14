@@ -10,25 +10,31 @@
 	<div class="main-page-container">
 		<h1 align="center" class="title">Ramblings</h1>
 		<a href="posts/$SLUG">
-	<h2><p>Validation is wonderful (even in really small quantities)</p>
+	<h2><p>That&#39;ll never happen, right?</p>
 </h2>
 </a>
-<p>Yesterday, up popped a notification from Tweetbot: NFLScoreBot had been <a href="http://twitter.com/KDVR/status/275396945265176576">mentioned</a> by a television station in Denver, <a href="https://twitter.com/kdvr">@KDVR</a>. When I went looking, I saw that they had used one of NFLScoreBot&#39;s tweets in their <a href="http://kdvr.com/2012/12/02/broncos-vs-bucccaneers-live-blog/">liveblog</a> of the Broncos game earlier that day.
+<p>We&#39;ve all thought this, at one time or another. It&#39;s a fairly easy way to procrastinate; why do something &quot;meaningless?&quot; I&#39;ve been burned recently, as you might guess. It started in November: a tied football game.
 
 </p>
-<p>It may sound cheesy, but that realization more-or-less made my day. The project has never gotten very much attention, so even this little tidbit was wonderful to see. If I needed any motivation to stick with the project, that mention, which was probably random, provided it.
+<p>Ties in the NFL are rare: only three <a href="https://en.wikipedia.org/wiki/List_of_NFL_tied_games#Tied_games">have occurred this century</a>. As such, the support for ties in NFLScoreBot was, at best, halfhearted. In English, everything was fine; the summaries weren&#39;t particularly elegant, but it worked. As I found that day, I had never actually bothered to do the translation work for French output. I got it <a href="https://twitter.com/NFLScoreBot/status/267820582651973632">working</a>, but I&#39;ve never implemented a feature faster.
 
 </p>
-<p>Validation, like this event for me, can be simple and small, ranging from a writeup on TechCrunch to a single, solitary new user. It doesn&#39;t matter: knowing that someone thought your project valuable makes all the difference; this validation really is the most powerful motivator, even on the smallest of scales.
+<p>I got burned again this month. The odds of two pieces of information being scored at the exact same value is ridiculously low. It happened, and I found a bug in my code that led to information being associated with the wrong team.
 
 </p>
-<p>In the end, I&#39;m likely not one to be offering advice, but I&#39;ll do it anyway: stick with your projects, even if they feel like <a href="http://dpearson.me/posts/NFLScoreBot+is+a+failure+But+Im+okay+with+that.html">failures</a>. It might just make your day, even if it&#39;s not the archetypal success story (which, for all the press these stories get, is uncommon).
+<p>The third time it got me? There have been <a href="http://msn.foxsports.com/nfl/lists/playoff-longest-games-history-double-overtime-games-011213#tab=photo-title=2012+AFC+Playoffs%253A+Ravens+38%252C+Broncos+35&amp;photo=31533269">six double-overtime games</a> in NFL history; one of them was <a href="https://twitter.com/NFLScoreBot/status/290276493752406016">this week</a>. Thankfully, it was a quick fix.
 
 </p>
-<p>Discuss this post <a href="http://news.ycombinator.com/item?id=4868409">on Hacker News</a>.</p>
+<p>Laziness really does catch up to you. Some of these problems were things I would be unlikely to catch; the second problem came down to a single use of <code>&lt;</code> instead of <code>&lt;=</code>. 
+
+</p>
+<p>The others, though, were things I knew about. I though I could get away with them for just one more season. Then I&#39;d fix it.
+
+</p>
+<p>I couldn&#39;t.</p>
 
 <br/>
-<span> -- December 3, 2012</span>
+<span> -- January 14, 2013</span>
 <br/>
 <br/>
 		<div class="ad" onclick="ad_go()">
@@ -38,6 +44,9 @@
 		<br/>
 		<hr/>
 		<div class="post-listing">
+	<a href="posts/Validation+is+wonderful+(even+in+really+small+quantities).html">Validation is wonderful (even in really small quantities)</a>
+	<span class="post-date"> -- December 3, 2012</span>
+</div><div class="post-listing">
 	<a href="posts/The+iPad+minis+glaring+weakness.html">The iPad mini's glaring weakness</a>
 	<span class="post-date"> -- November 6, 2012</span>
 </div><div class="post-listing">
