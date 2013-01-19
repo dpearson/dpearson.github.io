@@ -9,35 +9,29 @@
 <body>
 	<div class="main-page-container">
 		<h1 align="center" class="title">Ramblings</h1>
-		<a href="posts/Thatll+never+happen+right.html">
-	<h2><p>That&#39;ll never happen, right?</p>
+		<a href="posts/NHLScoreBot+Year+II.html">
+	<h2><p>NHLScoreBot, Year II</p>
 </h2>
 </a>
-<p>We&#39;ve all thought this, at one time or another. It&#39;s a fairly easy way to procrastinate; why do something &quot;meaningless?&quot; I&#39;ve been burned recently, as you might guess. It started in November: a tied football game.
+<p>TL;DR: Hockey&#39;s back. Follow NHLScoreBot in <a href="http://twitter.com/NHLScoreBot">English</a> or <a href="http://twitter.com/NHLScoreBotFR">French</a> for NHL scores and game summaries on Twitter.
 
 </p>
-<p>Ties in the NFL are rare: only three <a href="https://en.wikipedia.org/wiki/List_of_NFL_tied_games#Tied_games">have occurred this century</a>. As such, the support for ties in NFLScoreBot was, at best, halfhearted. In English, everything was fine; the summaries weren&#39;t particularly elegant, but it worked. As I found that day, I had never actually bothered to do the translation work for French output. I got it <a href="https://twitter.com/NFLScoreBot/status/267820582651973632">working</a>, but I&#39;ve never implemented a feature faster.
+<p>With the NHL lockout finally resolved, it&#39;s time for another year of hockey. There&#39;s a few new features:
 
 </p>
-<p>I got burned again this month. The odds of two pieces of information being scored at the exact same value is ridiculously low. It happened, and I found a bug in my code that led to information being associated with the wrong team.
+<ol>
+<li><p>Locations. Wanted to know who the home team was? Now, your Twitter client will show a nice map on the summary&#39;s detail view.</p>
+</li>
+<li><p>French support. This feature is something I added last year to <a href="http://twitter.com/NFLScoreBot">NFLScoreBot</a>, and the backend update to NHLScoreBot brought it into the fold.</p>
+</li>
+</ol>
+<p>I&#39;ve also open sourced some more code. The arena location data I&#39;m using is available <a href="https://github.com/NHLScoreBot/arenas">on Github</a> (and you can <a href="https://github.com/NHLScoreBot/arenas#fetching-over-http">grab it with a standard HTTP request</a>).
 
 </p>
-<p>The third time it got me? There have been <a href="http://msn.foxsports.com/nfl/lists/playoff-longest-games-history-double-overtime-games-011213#tab=photo-title=2012+AFC+Playoffs%253A+Ravens+38%252C+Broncos+35&amp;photo=31533269">six double-overtime games</a> in NFL history; one of them was <a href="https://twitter.com/NFLScoreBot/status/290276493752406016">this week</a>. Thankfully, it was a quick fix.
-
-</p>
-<p>Laziness really does catch up to you. Some of these problems were things I would be unlikely to catch; the second problem came down to a single use of <code>&lt;</code> instead of <code>&lt;=</code>. 
-
-</p>
-<p>The others, though, were things I knew about. I though I could get away with them for just one more season. Then I&#39;d fix it.
-
-</p>
-<p>I couldn&#39;t.
-
-</p>
-<p>Discuss this post <a href="http://news.ycombinator.com/item?id=5057028">on Hacker News</a>.</p>
+<p>My code for using the identi.ca API with node.js is also on <a href="https://github.com/dpearson/node-identi.ca">Github</a> and <a href="https://npmjs.org/package/identica">NPM</a>.</p>
 
 <br/>
-<span> -- January 14, 2013 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/feed.rss">RSS Feed</a></span>
+<span> -- January 19, 2013 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/feed.rss">RSS Feed</a></span>
 <br/>
 <br/>
 		<div class="ad" onclick="ad_go()">
@@ -47,6 +41,9 @@
 		<br/>
 		<hr/>
 		<div class="post-listing">
+	<a href="posts/Thatll+never+happen+right.html">That'll never happen, right?</a>
+	<span class="post-date"> -- January 14, 2013</span>
+</div><div class="post-listing">
 	<a href="posts/Validation+is+wonderful+(even+in+really+small+quantities).html">Validation is wonderful (even in really small quantities)</a>
 	<span class="post-date"> -- December 3, 2012</span>
 </div><div class="post-listing">
