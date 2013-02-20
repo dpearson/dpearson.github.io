@@ -1,1 +1,1 @@
-function ad_go(){window.location.href="http://nflscorebot.github.com"}
+function ad_go(){window.location.href="https://twitter.com/nhlscorebot"}
