@@ -4,10 +4,17 @@
 		<title>Ramblings</title>
 		<description>Random Throughts from @dpearson_</description>
 		<link>http://dpearson.me</link>
-		<lastBuildDate>Wed Feb 20 2013 16:55:29 GMT-0500 (EST)</lastBuildDate>
-		<pubDate>Wed Feb 20 2013 16:55:29 GMT-0500 (EST)</pubDate>
+		<lastBuildDate>Mon Feb 25 2013 16:10:56 GMT-0500 (EST)</lastBuildDate>
+		<pubDate>Mon Feb 25 2013 16:10:56 GMT-0500 (EST)</pubDate>
 		<ttl>1800</ttl>
 				<item>
+			<title>A Different Way to Learn Linear Algebra</title>
+			<description></description>
+			<link>http://dpearson.me/A+Different+Way+to+Learn+Linear+Algebra.html</link>
+			<guid>A Different Way to Learn Linear Algebra</guid>
+			<pubDate>February 25, 2013</pubDate>
+		</item>
+		<item>
 			<title>NHLScoreBot, Year II</title>
 			<description></description>
 			<link>http://dpearson.me/NHLScoreBot+Year+II.html</link>

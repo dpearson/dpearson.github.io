@@ -9,29 +9,26 @@
 <body>
 	<div class="main-page-container">
 		<h1 align="center" class="title">Ramblings</h1>
-		<a href="posts/NHLScoreBot+Year+II.html">
-	<h2><p>NHLScoreBot, Year II</p>
+		<a href="posts/A+Different+Way+to+Learn+Linear+Algebra.html">
+	<h2><p>A Different Way to Learn Linear Algebra</p>
 </h2>
 </a>
-<p>TL;DR: Hockey&#39;s back. Follow NHLScoreBot in <a href="http://twitter.com/NHLScoreBot">English</a> or <a href="http://twitter.com/NHLScoreBotFR">French</a> for NHL scores and game summaries on Twitter.
+<p>I should begin with a disclaimer: this is an experiment, but, last week, I started working on a new library, <a href="http://dpearson.me/linalgebra/">linalgebra</a>, designed as a teaching aide. The algorithms are, almost certainly, uniformly non-optimal. That&#39;s not the point, though; I&#39;m curious as to whether taking the time to implement concepts in code will help me learn.
 
 </p>
-<p>With the NHL lockout finally resolved, it&#39;s time for another year of hockey. There&#39;s a few new features:
+<p>Linear algebra is uniquely suited to this task in ways that other fields, like Calculus, aren&#39;t. For one, symbolic math is a pain, even with existing libraries, while linear algebra can be purely numeric and built upon standard data types. Meanwhile, it is imperative that any engineer has a firm grasp on at least basic concepts.
 
 </p>
-<ol>
-<li><p>Locations. Wanted to know who the home team was? Now, your Twitter client will show a nice map on the summary&#39;s detail view.</p>
-</li>
-<li><p>French support. This feature is something I added last year to <a href="http://twitter.com/NFLScoreBot">NFLScoreBot</a>, and the backend update to NHLScoreBot brought it into the fold.</p>
-</li>
-</ol>
-<p>I&#39;ve also open sourced some more code. The arena location data I&#39;m using is available <a href="https://github.com/NHLScoreBot/arenas">on Github</a> (and you can <a href="https://github.com/NHLScoreBot/arenas#fetching-over-http">grab it with a standard HTTP request</a>).
+<p>As for the library, it&#39;s all written in CoffeeScript, my current favorite language, although, in retrospect (and if I didn&#39;t have so many other projects), a project like this one could have been a great opportunity to also learn a new language.
 
 </p>
-<p>My code for using the identi.ca API with node.js is also on <a href="https://github.com/dpearson/node-identi.ca">Github</a> and <a href="https://npmjs.org/package/identica">NPM</a>.</p>
+<p>So far, it seems to be helping at least a little, although I now feel like everything math-related I&#39;m analyzing through the prism of Computer Science (although that&#39;s not necessarily a bad thing). Still, the jury remains out on whether this project will make any difference for me, and I won&#39;t really know that until the day of the final.
+
+</p>
+<p>At any rate, the code is <a href="https://github.com/dpearson/linalgebra">on GitHub</a>. If it looks like I&#39;ve abandoned it, please bug me about it <a href="https://twitter.com/dpearson_">on Twitter</a>.</p>
 
 <br/>
-<span> -- January 19, 2013 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/feed.rss">RSS Feed</a></span>
+<span> -- February 25, 2013 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/feed.rss">RSS Feed</a></span>
 <br/>
 <br/>
 		<div class="ad" onclick="ad_go()">
@@ -41,6 +38,9 @@
 		<br/>
 		<hr/>
 		<div class="post-listing">
+	<a href="posts/NHLScoreBot+Year+II.html">NHLScoreBot, Year II</a>
+	<span class="post-date"> -- January 19, 2013</span>
+</div><div class="post-listing">
 	<a href="posts/Thatll+never+happen+right.html">That'll never happen, right?</a>
 	<span class="post-date"> -- January 14, 2013</span>
 </div><div class="post-listing">
