@@ -1,0 +1,153 @@
+<head>
+	<title>David Pearson</title>
+	<link href="http://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet" type="text/css">
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../scripts.js"></script>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=0;"/>
+	<meta name="google-site-verification" content="RA606HZMjvDzS0ZdE_34oILsvW8xNQDA_kwhoEY1YE0"/>
+</head>
+<body>
+	<div class="banner"><a class="titleLink" href="/blog">David Pearson</a></div>
+	<div class="bannerLinks">
+		<a class="bannerLink" href="/">about</a>
+		<a class="bannerLink" href="/contact">contact</a>
+	</div>
+	<hr/>
+	<div style="height:20px;"></div>
+	<div class="post-container">
+				<div class="post-text">
+			<a class="post-title" href="posts/Experimenting+with+a+different+way+to+learn+linear+algebra.html"><p>Experimenting with a different way to learn linear algebra</p>
+</a>
+<p>I should begin with a disclaimer: this is an experiment, but, last week, I started working on a new library, <a href="http://dpearson.me/linalgebra/">linalgebra</a>, designed as a teaching aide. The algorithms are, almost certainly, uniformly non-optimal. That&#39;s not the point, though; I&#39;m curious as to whether taking the time to implement concepts in code will help me learn.
+
+</p>
+<p>Linear algebra is uniquely suited to this task in ways that other fields, like Calculus, aren&#39;t. For one, symbolic math is a pain, even with existing libraries, while linear algebra can be purely numeric and built upon standard data types. Meanwhile, it is imperative that any engineer has a firm grasp on at least basic concepts.
+
+</p>
+<p>As for the library, it&#39;s all written in CoffeeScript, my current favorite language, although, in retrospect (and if I didn&#39;t have so many other projects), a project like this one could have been a great opportunity to also learn a new language.
+
+</p>
+<p>So far, it seems to be helping at least a little, although I now feel like everything math-related I&#39;m analyzing through the prism of Computer Science (for the record, that&#39;s not necessarily a bad thing). Still, the jury remains out on whether this project will make any difference for me, and I won&#39;t really know that until the day of the final.
+
+</p>
+<p>At any rate, the code is <a href="https://github.com/dpearson/linalgebra">on GitHub</a>. If it looks like I&#39;ve abandoned it, please bug me about it <a href="https://twitter.com/dpearson_">on Twitter</a>.  
+
+</p>
+<p>Discuss this post <a href="http://news.ycombinator.com/item?id=5281847">on Hacker News</a>.</p>
+
+<br/>
+<span> -- February 25, 2013 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/feed.rss">RSS Feed</a></span>
+<br/>
+<br/>
+		</div>			<br/>
+			<br/>
+			<hr/>		<div class="post-text">
+			<a class="post-title" href="posts/NHLScoreBot+Year+II.html"><p>NHLScoreBot, Year II</p>
+</a>
+<p>TL;DR: Hockey&#39;s back. Follow NHLScoreBot in <a href="http://twitter.com/NHLScoreBot">English</a> or <a href="http://twitter.com/NHLScoreBotFR">French</a> for NHL scores and game summaries on Twitter.
+
+</p>
+<p>With the NHL lockout finally resolved, it&#39;s time for another year of hockey. There&#39;s a few new features:
+
+</p>
+<ol>
+<li><p>Locations. Wanted to know who the home team was? Now, your Twitter client will show a nice map on the summary&#39;s detail view.</p>
+</li>
+<li><p>French support. This feature is something I added last year to <a href="http://twitter.com/NFLScoreBot">NFLScoreBot</a>, and the backend update to NHLScoreBot brought it into the fold.</p>
+</li>
+</ol>
+<p>I&#39;ve also open sourced some more code. The arena location data I&#39;m using is available <a href="https://github.com/NHLScoreBot/arenas">on Github</a> (and you can <a href="https://github.com/NHLScoreBot/arenas#fetching-over-http">grab it with a standard HTTP request</a>).
+
+</p>
+<p>My code for using the identi.ca API with node.js is also on <a href="https://github.com/dpearson/node-identi.ca">Github</a> and <a href="https://npmjs.org/package/identica">NPM</a>.</p>
+
+<br/>
+<span> -- January 19, 2013 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/feed.rss">RSS Feed</a></span>
+<br/>
+<br/>
+		</div>			<br/>
+			<br/>
+			<hr/>		<div class="post-text">
+			<a class="post-title" href="posts/Thatll+never+happen+right.html"><p>That&#39;ll never happen, right?</p>
+</a>
+<p>We&#39;ve all thought this, at one time or another. It&#39;s a fairly easy way to procrastinate; why do something &quot;meaningless?&quot; I&#39;ve been burned recently, as you might guess. It started in November: a tied football game.
+
+</p>
+<p>Ties in the NFL are rare: only three <a href="https://en.wikipedia.org/wiki/List_of_NFL_tied_games#Tied_games">have occurred this century</a>. As such, the support for ties in NFLScoreBot was, at best, halfhearted. In English, everything was fine; the summaries weren&#39;t particularly elegant, but it worked. As I found that day, I had never actually bothered to do the translation work for French output. I got it <a href="https://twitter.com/NFLScoreBot/status/267820582651973632">working</a>, but I&#39;ve never implemented a feature faster.
+
+</p>
+<p>I got burned again this month. The odds of two pieces of information being scored at the exact same value is ridiculously low. It happened, and I found a bug in my code that led to information being associated with the wrong team.
+
+</p>
+<p>The third time it got me? There have been <a href="http://msn.foxsports.com/nfl/lists/playoff-longest-games-history-double-overtime-games-011213#tab=photo-title=2012+AFC+Playoffs%253A+Ravens+38%252C+Broncos+35&amp;photo=31533269">six double-overtime games</a> in NFL history; one of them was <a href="https://twitter.com/NFLScoreBot/status/290276493752406016">this week</a>. Thankfully, it was a quick fix.
+
+</p>
+<p>Laziness really does catch up to you. Some of these problems were things I would be unlikely to catch; the second problem came down to a single use of <code>&lt;</code> instead of <code>&lt;=</code>. 
+
+</p>
+<p>The others, though, were things I knew about. I though I could get away with them for just one more season. Then I&#39;d fix it.
+
+</p>
+<p>I couldn&#39;t.
+
+</p>
+<p>Discuss this post <a href="http://news.ycombinator.com/item?id=5057028">on Hacker News</a>.</p>
+
+<br/>
+<span> -- January 14, 2013 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/feed.rss">RSS Feed</a></span>
+<br/>
+<br/>
+		</div>			<br/>
+			<br/>
+			<hr/>		<div class="post-text">
+			<a class="post-title" href="posts/Validation+is+wonderful+(even+in+really+small+quantities).html"><p>Validation is wonderful (even in really small quantities)</p>
+</a>
+<p>Yesterday, up popped a notification from Tweetbot: NFLScoreBot had been <a href="http://twitter.com/KDVR/status/275396945265176576">mentioned</a> by a television station in Denver, <a href="https://twitter.com/kdvr">@KDVR</a>. When I went looking, I saw that they had used one of NFLScoreBot&#39;s tweets in their <a href="http://kdvr.com/2012/12/02/broncos-vs-bucccaneers-live-blog/">liveblog</a> of the Broncos game earlier that day.
+
+</p>
+<p>It may sound cheesy, but that realization more-or-less made my day. The project has never gotten very much attention, so even this little tidbit was wonderful to see. If I needed any motivation to stick with the project, that mention, which was probably random, provided it.
+
+</p>
+<p>Validation, like this event for me, can be simple and small, ranging from a writeup on TechCrunch to a single, solitary new user. It doesn&#39;t matter: knowing that someone thought your project valuable makes all the difference; this validation really is the most powerful motivator, even on the smallest of scales.
+
+</p>
+<p>In the end, I&#39;m likely not one to be offering advice, but I&#39;ll do it anyway: stick with your projects, even if they feel like <a href="http://dpearson.me/posts/NFLScoreBot+is+a+failure+But+Im+okay+with+that.html">failures</a>. It might just make your day, even if it&#39;s not the archetypal success story (which, for all the press these stories get, is uncommon).
+
+</p>
+<p>Discuss this post <a href="http://news.ycombinator.com/item?id=4868409">on Hacker News</a>.</p>
+
+<br/>
+<span> -- December 3, 2012 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/feed.rss">RSS Feed</a></span>
+<br/>
+<br/>
+		</div>			<br/>
+			<br/>
+			<hr/>		<div class="post-text">
+			<a class="post-title" href="posts/The+iPad+minis+glaring+weakness.html"><p>The iPad mini&#39;s glaring weakness</p>
+</a>
+<p>Over the weekend, I had the opportunity to play with one of the new iPad minis in my local Apple store. While I must profess myself to be impressed, there did nevertheless immediately emerge one significant weakness. Spoiler alert: it&#39;s not the display.
+
+</p>
+<p>Most reviewers have dinged the display quality, but I was actually impressed with it. Granted, I was, at the time, using a first-generation iPad, but I thought the display held up well, especially given the generally-horrible in-store lighting.
+
+</p>
+<p>Rather, the problem is the device&#39;s intended orientation. When you pick the iPad mini up, it feels like a portrait device, and, that way, it is quite comfortable to hold. It certainly supports landscape orientations, though, for some reason, it doesn&#39;t feel quite right.
+
+</p>
+<p>The problem there is that, over the past two and a half years, developers, including Apple, seem to have designed for landscape first. While the built-in Mail app, again, functions in portrait, message listing is normally hidden away in the detail view, creating a minor annoyance (at least for me). On the other hand, MLB At Bat simply does not support portrait orientation on the iPad, forcing the device to be rotated.
+
+</p>
+<p>Maybe I&#39;m nitpicking. Maybe I&#39;m the only one who sees this as a problem. But the iPad mini&#39;s focus on portrait orientation, where it feels best in your hand, is, I think, its only real weakness.</p>
+
+<br/>
+<span> -- November 6, 2012 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/feed.rss">RSS Feed</a></span>
+<br/>
+<br/>
+		</div>
+	</div>
+		<div class="page-selector">
+		1 <a href="/blog/2" class="page-select-arrow">&rArr;</a>
+	</div>
+	<script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-29421539-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+</body>

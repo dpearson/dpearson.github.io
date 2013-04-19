@@ -1,0 +1,56 @@
+<head>
+	<title>That'll never happen, right? - David Pearson</title>
+	<link href="http://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet" type="text/css">
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../scripts.js"></script>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=0;">
+</head>
+<body>
+	<div class="banner"><a class="titleLink" href="/blog">David Pearson</a></div>
+	<div class="bannerLinks">
+		<a class="bannerLink" href="/">about</a>
+		<a class="bannerLink" href="/contact">contact</a>
+	</div>
+	<hr/>
+	<div style="height:20px;"></div>
+	<div class="post-container">
+		<div class="post-text">
+			<h2><p>That&#39;ll never happen, right?</p>
+</h2>
+			<p>We&#39;ve all thought this, at one time or another. It&#39;s a fairly easy way to procrastinate; why do something &quot;meaningless?&quot; I&#39;ve been burned recently, as you might guess. It started in November: a tied football game.
+
+</p>
+<p>Ties in the NFL are rare: only three <a href="https://en.wikipedia.org/wiki/List_of_NFL_tied_games#Tied_games">have occurred this century</a>. As such, the support for ties in NFLScoreBot was, at best, halfhearted. In English, everything was fine; the summaries weren&#39;t particularly elegant, but it worked. As I found that day, I had never actually bothered to do the translation work for French output. I got it <a href="https://twitter.com/NFLScoreBot/status/267820582651973632">working</a>, but I&#39;ve never implemented a feature faster.
+
+</p>
+<p>I got burned again this month. The odds of two pieces of information being scored at the exact same value is ridiculously low. It happened, and I found a bug in my code that led to information being associated with the wrong team.
+
+</p>
+<p>The third time it got me? There have been <a href="http://msn.foxsports.com/nfl/lists/playoff-longest-games-history-double-overtime-games-011213#tab=photo-title=2012+AFC+Playoffs%253A+Ravens+38%252C+Broncos+35&amp;photo=31533269">six double-overtime games</a> in NFL history; one of them was <a href="https://twitter.com/NFLScoreBot/status/290276493752406016">this week</a>. Thankfully, it was a quick fix.
+
+</p>
+<p>Laziness really does catch up to you. Some of these problems were things I would be unlikely to catch; the second problem came down to a single use of <code>&lt;</code> instead of <code>&lt;=</code>. 
+
+</p>
+<p>The others, though, were things I knew about. I though I could get away with them for just one more season. Then I&#39;d fix it.
+
+</p>
+<p>I couldn&#39;t.
+
+</p>
+<p>Discuss this post <a href="http://news.ycombinator.com/item?id=5057028">on Hacker News</a>.</p>
+
+			<br/>
+			<div class="ad" onclick="ad_go()">
+				<img src="../nhlscorebotlogo.png" class="ad"> <p class="ad">If you like this post, you might want to check out my current project, <a href="https://twitter.com/nhlscorebot" class="ad">NHLScoreBot</a>.</p>
+			</div>
+			<br/>
+			<br/>
+			<span> -- January 14, 2013 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/feed.rss">RSS Feed</a></span>
+			<br/>
+			<br/>
+		</div>
+	</div>
+	<script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-29421539-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+</body>

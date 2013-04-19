@@ -1,0 +1,1 @@
+function ad_go(){window.location.href="https://twitter.com/nhlscorebot"}
