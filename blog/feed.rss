@@ -4,10 +4,17 @@
 		<title>David Pearson</title>
 		<description>Random Throughts from @dpearson_</description>
 		<link>http://dpearson.me</link>
-		<lastBuildDate>Thu Apr 18 2013 22:29:30 GMT-0400 (EDT)</lastBuildDate>
-		<pubDate>Thu Apr 18 2013 22:29:30 GMT-0400 (EDT)</pubDate>
+		<lastBuildDate>Wed May 08 2013 16:37:55 GMT-0400 (EDT)</lastBuildDate>
+		<pubDate>Wed May 08 2013 16:37:55 GMT-0400 (EDT)</pubDate>
 		<ttl>1800</ttl>
 				<item>
+			<title>Software duct tape</title>
+			<description></description>
+			<link>http://dpearson.me/Software+duct+tape.html</link>
+			<guid>Software duct tape</guid>
+			<pubDate>May 8, 2013</pubDate>
+		</item>
+		<item>
 			<title>Experimenting with a different way to learn linear algebra</title>
 			<description></description>
 			<link>http://dpearson.me/Experimenting+with+a+different+way+to+learn+linear+algebra.html</link>

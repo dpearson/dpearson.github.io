@@ -17,6 +17,35 @@
 	<div style="height:20px;"></div>
 	<div class="post-container">
 				<div class="post-text">
+			<a class="post-title" href="dpearson.me/blog/posts/Software+duct+tape.html"><p>Software duct tape</p>
+</a>
+<p>Everyone who has written even a few lines of code has heard the mantra: &quot;ship early, ship often.&quot; It&#39;s not entirely bad advice; sometimes, you do indeed have to make some compromises to get software out the door.
+
+</p>
+<p>There is, however, an unfortunate tendency when rushing to finish something, especially with a hard deadline looming. I&#39;ve taken to calling it (after a physical analogue) &quot;duct tape.&quot; In it nutshell, duct taped software is anything you&#39;re afraid to touch, lest something break. It defies refactoring attempts, and it has tremendous staying power.
+
+</p>
+<p>My cringeworthy example? NHLScoreBot. It was completely rewritten this spring to finally fix an awful mistake: initially, it was a complete fork of the codebase for the football versions.
+
+</p>
+<p>That worked great for a while. There was a lot of shared code around summary generation, and I had to quickly ship to present in a competition. Everything mostly worked, too; I had spent a bit of time chasing down all of the football-specific code. As long as I didn&#39;t breathe too loudly, it churned out decent summaries.
+
+</p>
+<p>Eventually, though, I had had enough. I spent a couple of weeks worth of free time extracting all of that shared summary-generation code into its own library. There were still sport-specific changes, but those are now miniscule. I got a lot of functionality for free, without difficult merges every time something minor changed. In short, it&#39;s what I probably should have done initially.
+
+</p>
+<p>But, looking back, it&#39;s hard to fault the duct tape too much. The horribly-rigged mashup of code specific to two completely different sports allowed me to ship quickly and bought me time for a difficult refactor. That refactor, too, was probably inevitable, and this one messy project taught me that lesson.
+
+</p>
+<p>Hopefully, it&#39;s a lesson that I won&#39;t have to relearn.</p>
+
+<br/>
+<span> -- May 8, 2013 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/blog/feed.rss">RSS Feed</a></span>
+<br/>
+<br/>
+		</div>			<br/>
+			<br/>
+			<hr/>		<div class="post-text">
 			<a class="post-title" href="dpearson.me/blog/posts/Experimenting+with+a+different+way+to+learn+linear+algebra.html"><p>Experimenting with a different way to learn linear algebra</p>
 </a>
 <p>I should begin with a disclaimer: this is an experiment, but, last week, I started working on a new library, <a href="http://dpearson.me/linalgebra/">linalgebra</a>, designed as a teaching aide. The algorithms are, almost certainly, uniformly non-optimal. That&#39;s not the point, though; I&#39;m curious as to whether taking the time to implement concepts in code will help me learn.
@@ -119,29 +148,6 @@
 
 <br/>
 <span> -- December 3, 2012 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/blog/feed.rss">RSS Feed</a></span>
-<br/>
-<br/>
-		</div>			<br/>
-			<br/>
-			<hr/>		<div class="post-text">
-			<a class="post-title" href="dpearson.me/blog/posts/The+iPad+minis+glaring+weakness.html"><p>The iPad mini&#39;s glaring weakness</p>
-</a>
-<p>Over the weekend, I had the opportunity to play with one of the new iPad minis in my local Apple store. While I must profess myself to be impressed, there did nevertheless immediately emerge one significant weakness. Spoiler alert: it&#39;s not the display.
-
-</p>
-<p>Most reviewers have dinged the display quality, but I was actually impressed with it. Granted, I was, at the time, using a first-generation iPad, but I thought the display held up well, especially given the generally-horrible in-store lighting.
-
-</p>
-<p>Rather, the problem is the device&#39;s intended orientation. When you pick the iPad mini up, it feels like a portrait device, and, that way, it is quite comfortable to hold. It certainly supports landscape orientations, though, for some reason, it doesn&#39;t feel quite right.
-
-</p>
-<p>The problem there is that, over the past two and a half years, developers, including Apple, seem to have designed for landscape first. While the built-in Mail app, again, functions in portrait, message listing is normally hidden away in the detail view, creating a minor annoyance (at least for me). On the other hand, MLB At Bat simply does not support portrait orientation on the iPad, forcing the device to be rotated.
-
-</p>
-<p>Maybe I&#39;m nitpicking. Maybe I&#39;m the only one who sees this as a problem. But the iPad mini&#39;s focus on portrait orientation, where it feels best in your hand, is, I think, its only real weakness.</p>
-
-<br/>
-<span> -- November 6, 2012 &middot; <a href="https://twitter.com/dpearson_">Twitter</a> &middot; <a href="http://dpearson.me/blog/feed.rss">RSS Feed</a></span>
 <br/>
 <br/>
 		</div>
