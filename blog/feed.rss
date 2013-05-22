@@ -4,10 +4,17 @@
 		<title>David Pearson</title>
 		<description>Random Throughts from @dpearson_</description>
 		<link>http://dpearson.me</link>
-		<lastBuildDate>Wed May 08 2013 16:51:32 GMT-0400 (EDT)</lastBuildDate>
-		<pubDate>Wed May 08 2013 16:51:32 GMT-0400 (EDT)</pubDate>
+		<lastBuildDate>Wed May 22 2013 16:45:36 GMT-0400 (EDT)</lastBuildDate>
+		<pubDate>Wed May 22 2013 16:45:36 GMT-0400 (EDT)</pubDate>
 		<ttl>1800</ttl>
 				<item>
+			<title>Ending support for node-identi.ca</title>
+			<description></description>
+			<link>http://dpearson.me/Ending+support+for+node-identica.html</link>
+			<guid>Ending support for node-identi.ca</guid>
+			<pubDate>May 22, 2013</pubDate>
+		</item>
+		<item>
 			<title>Software duct tape</title>
 			<description></description>
 			<link>http://dpearson.me/Software+duct+tape.html</link>
