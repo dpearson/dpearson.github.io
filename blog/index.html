@@ -18,6 +18,26 @@
 	<div style="height:20px;"></div>
 	<div class="post-container">
 				<div class="post-text">
+			<a class="post-title" href="http://dpearson.me/blog/posts/My+month+off+Twitter.html"><p>My month off Twitter</p>
+</a>
+<p>Almost two months ago, I wrote <a href="http://dpearson.me/blog/posts/Addicted+to+Twitter.html">a post</a> about being &quot;addicted&quot; to Twitter. It wasn&#39;t an addiction in the traditional, medical sense, but I was spending far, far too much time constantly checking Twitter, neglecting other aspects of my life. Then, I wrote that I would be stepping back from Twitter for a month, in order to gain a better perspective.
+
+</p>
+<p>Now, it&#39;s been , and I kept my promise, staying off Twitter for a month, save for the week of WWDC. For that week, Twitter was my way of following along with the people lucky enough to be there in person, to find out what sessions were worth watching and which ones I could skip.
+
+</p>
+<p>Twitter certainly is wonderful for news consumption and even (dare I say) as a replacement for RSS. That, though, is the problem: sometimes, I&#39;ve gotten a case of information overload. During my month away from Twitter, I was able to write more code, even if I didn&#39;t write much prose here. I felt more at peace and more relaxed than I had in ages. Even though giving up Twitter wasn&#39;t the sole reason for that relaxation, I believe that this experiment was responsible in no small part.
+
+</p>
+<p>I also learned more about why I spend so much time on Twitter. My friends are wonderful, but they&#39;re not nearly as interested in technology as I am. Twitter, in that sense, represents a connection, however tenuous, to a world of people that I&#39;ve never had the chance to be a true part of. That&#39;s not something that I really want to give up.</p>
+
+<br/>
+<span> -- July 22, 2013 &middot; <a href="https://twitter.com/dpearson_"><img src="http://dpearson.me/blog/res/Twitter.png" class="network-icon"></a> &middot; <a href="https://plus.google.com/115101813330671794387/posts"><img src="http://dpearson.me/blog/res/GooglePlus.png" class="network-icon"></a> &middot; <a href="https://alpha.app.net/dpearson"><img src="http://dpearson.me/blog/res/App.net.png" class="network-icon"></a> &middot; <a href="mailto:dpearson@dpearson.me"><img src="http://dpearson.me/blog/res/Email.png" class="network-icon"></a> &middot; <a href="http://dpearson.me/blog/feed.rss"><img src="http://dpearson.me/blog/res/RSS.png" class="network-icon"></a></span>
+<br/>
+<br/>
+		</div>			<br/>
+			<br/>
+			<hr/>		<div class="post-text">
 			<a class="post-title" href="http://dpearson.me/blog/posts/Addicted+to+Twitter.html"><p>Addicted to Twitter</p>
 </a>
 <p>I think I&#39;m addicted to Twitter. Why? Every time I&#39;m the least bit bored or feeling too lazy to work, I reach for my iPad to check Twitter. I read literally every tweet that pops up in my timeline over the course of the day. When I open Tweetbot and there are no new tweets, I start looking to follow more people so that I never have that feeling again. Checking Twitter is the first thing I do when I get up in the morning. Every day.
@@ -56,38 +76,6 @@
 
 <br/>
 <span> -- May 22, 2013 &middot; <a href="https://twitter.com/dpearson_"><img src="http://dpearson.me/blog/res/Twitter.png" class="network-icon"></a> &middot; <a href="https://plus.google.com/115101813330671794387/posts"><img src="http://dpearson.me/blog/res/GooglePlus.png" class="network-icon"></a> &middot; <a href="https://alpha.app.net/dpearson"><img src="http://dpearson.me/blog/res/App.net.png" class="network-icon"></a> &middot; <a href="mailto:dpearson@dpearson.me"><img src="http://dpearson.me/blog/res/Email.png" class="network-icon"></a> &middot; <a href="http://dpearson.me/blog/feed.rss"><img src="http://dpearson.me/blog/res/RSS.png" class="network-icon"></a></span>
-<br/>
-<br/>
-		</div>			<br/>
-			<br/>
-			<hr/>		<div class="post-text">
-			<a class="post-title" href="http://dpearson.me/blog/posts/Software+duct+tape.html"><p>Software duct tape</p>
-</a>
-<p>Everyone who has written even a few lines of code has heard the mantra: &quot;ship early, ship often.&quot; It&#39;s not entirely bad advice; sometimes, you do indeed have to make some compromises to get software out the door.
-
-</p>
-<p>There is, however, an unfortunate tendency when rushing to finish something, especially with a hard deadline looming. I&#39;ve taken to calling it (after a physical analogue) &quot;duct tape.&quot; In it nutshell, duct taped software is anything you&#39;re afraid to touch, lest something break. It defies refactoring attempts, and it has tremendous staying power.
-
-</p>
-<p>My cringeworthy example? NHLScoreBot. It was completely rewritten this spring to finally fix an awful mistake: initially, it was a complete fork of the codebase for the football versions.
-
-</p>
-<p>That worked great for a while. There was a lot of shared code around summary generation, and I had to quickly ship to present in a competition. Everything mostly worked, too; I had spent a bit of time chasing down all of the football-specific code. As long as I didn&#39;t breathe too loudly, it churned out decent summaries.
-
-</p>
-<p>Eventually, though, I had had enough. I spent a couple of weeks worth of free time extracting all of that shared summary-generation code into its own library. There were still sport-specific changes, but those are now miniscule. I got a lot of functionality for free, without difficult merges every time something minor changed. In short, it&#39;s what I probably should have done initially.
-
-</p>
-<p>But, looking back, it&#39;s hard to fault the duct tape too much. The horribly-rigged mashup of code specific to two completely different sports allowed me to ship quickly and bought me time for a difficult refactor. That refactor, too, was probably inevitable, and this one messy project taught me that lesson.
-
-</p>
-<p>Hopefully, it&#39;s a lesson that I won&#39;t have to relearn.
-
-</p>
-<p>Discuss this post over on <a href="https://news.ycombinator.com/item?id=5676795">Hacker News</a>.</p>
-
-<br/>
-<span> -- May 8, 2013 &middot; <a href="https://twitter.com/dpearson_"><img src="http://dpearson.me/blog/res/Twitter.png" class="network-icon"></a> &middot; <a href="https://plus.google.com/115101813330671794387/posts"><img src="http://dpearson.me/blog/res/GooglePlus.png" class="network-icon"></a> &middot; <a href="https://alpha.app.net/dpearson"><img src="http://dpearson.me/blog/res/App.net.png" class="network-icon"></a> &middot; <a href="mailto:dpearson@dpearson.me"><img src="http://dpearson.me/blog/res/Email.png" class="network-icon"></a> &middot; <a href="http://dpearson.me/blog/feed.rss"><img src="http://dpearson.me/blog/res/RSS.png" class="network-icon"></a></span>
 <br/>
 <br/>
 		</div>

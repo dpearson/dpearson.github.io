@@ -18,6 +18,38 @@
 	<div style="height:20px;"></div>
 	<div class="post-container">
 				<div class="post-text">
+			<a class="post-title" href="http://dpearson.me/blog/posts/Software+duct+tape.html"><p>Software duct tape</p>
+</a>
+<p>Everyone who has written even a few lines of code has heard the mantra: &quot;ship early, ship often.&quot; It&#39;s not entirely bad advice; sometimes, you do indeed have to make some compromises to get software out the door.
+
+</p>
+<p>There is, however, an unfortunate tendency when rushing to finish something, especially with a hard deadline looming. I&#39;ve taken to calling it (after a physical analogue) &quot;duct tape.&quot; In it nutshell, duct taped software is anything you&#39;re afraid to touch, lest something break. It defies refactoring attempts, and it has tremendous staying power.
+
+</p>
+<p>My cringeworthy example? NHLScoreBot. It was completely rewritten this spring to finally fix an awful mistake: initially, it was a complete fork of the codebase for the football versions.
+
+</p>
+<p>That worked great for a while. There was a lot of shared code around summary generation, and I had to quickly ship to present in a competition. Everything mostly worked, too; I had spent a bit of time chasing down all of the football-specific code. As long as I didn&#39;t breathe too loudly, it churned out decent summaries.
+
+</p>
+<p>Eventually, though, I had had enough. I spent a couple of weeks worth of free time extracting all of that shared summary-generation code into its own library. There were still sport-specific changes, but those are now miniscule. I got a lot of functionality for free, without difficult merges every time something minor changed. In short, it&#39;s what I probably should have done initially.
+
+</p>
+<p>But, looking back, it&#39;s hard to fault the duct tape too much. The horribly-rigged mashup of code specific to two completely different sports allowed me to ship quickly and bought me time for a difficult refactor. That refactor, too, was probably inevitable, and this one messy project taught me that lesson.
+
+</p>
+<p>Hopefully, it&#39;s a lesson that I won&#39;t have to relearn.
+
+</p>
+<p>Discuss this post over on <a href="https://news.ycombinator.com/item?id=5676795">Hacker News</a>.</p>
+
+<br/>
+<span> -- May 8, 2013 &middot; <a href="https://twitter.com/dpearson_"><img src="http://dpearson.me/blog/res/Twitter.png" class="network-icon"></a> &middot; <a href="https://plus.google.com/115101813330671794387/posts"><img src="http://dpearson.me/blog/res/GooglePlus.png" class="network-icon"></a> &middot; <a href="https://alpha.app.net/dpearson"><img src="http://dpearson.me/blog/res/App.net.png" class="network-icon"></a> &middot; <a href="mailto:dpearson@dpearson.me"><img src="http://dpearson.me/blog/res/Email.png" class="network-icon"></a> &middot; <a href="http://dpearson.me/blog/feed.rss"><img src="http://dpearson.me/blog/res/RSS.png" class="network-icon"></a></span>
+<br/>
+<br/>
+		</div>			<br/>
+			<br/>
+			<hr/>		<div class="post-text">
 			<a class="post-title" href="http://dpearson.me/blog/posts/Experimenting+with+a+different+way+to+learn+linear+algebra.html"><p>Experimenting with a different way to learn linear algebra</p>
 </a>
 <p>I should begin with a disclaimer: this is an experiment, but, last week, I started working on a new library, <a href="http://dpearson.me/linalgebra/">linalgebra</a>, designed as a teaching aide. The algorithms are, almost certainly, uniformly non-optimal. That&#39;s not the point, though; I&#39;m curious as to whether taking the time to implement concepts in code will help me learn.
@@ -65,38 +97,6 @@
 
 <br/>
 <span> -- January 19, 2013 &middot; <a href="https://twitter.com/dpearson_"><img src="http://dpearson.me/blog/res/Twitter.png" class="network-icon"></a> &middot; <a href="https://plus.google.com/115101813330671794387/posts"><img src="http://dpearson.me/blog/res/GooglePlus.png" class="network-icon"></a> &middot; <a href="https://alpha.app.net/dpearson"><img src="http://dpearson.me/blog/res/App.net.png" class="network-icon"></a> &middot; <a href="mailto:dpearson@dpearson.me"><img src="http://dpearson.me/blog/res/Email.png" class="network-icon"></a> &middot; <a href="http://dpearson.me/blog/feed.rss"><img src="http://dpearson.me/blog/res/RSS.png" class="network-icon"></a></span>
-<br/>
-<br/>
-		</div>			<br/>
-			<br/>
-			<hr/>		<div class="post-text">
-			<a class="post-title" href="http://dpearson.me/blog/posts/Thatll+never+happen+right.html"><p>That&#39;ll never happen, right?</p>
-</a>
-<p>We&#39;ve all thought this, at one time or another. It&#39;s a fairly easy way to procrastinate; why do something &quot;meaningless?&quot; I&#39;ve been burned recently, as you might guess. It started in November: a tied football game.
-
-</p>
-<p>Ties in the NFL are rare: only three <a href="https://en.wikipedia.org/wiki/List_of_NFL_tied_games#Tied_games">have occurred this century</a>. As such, the support for ties in NFLScoreBot was, at best, halfhearted. In English, everything was fine; the summaries weren&#39;t particularly elegant, but it worked. As I found that day, I had never actually bothered to do the translation work for French output. I got it <a href="https://twitter.com/NFLScoreBot/status/267820582651973632">working</a>, but I&#39;ve never implemented a feature faster.
-
-</p>
-<p>I got burned again this month. The odds of two pieces of information being scored at the exact same value is ridiculously low. It happened, and I found a bug in my code that led to information being associated with the wrong team.
-
-</p>
-<p>The third time it got me? There have been <a href="http://msn.foxsports.com/nfl/lists/playoff-longest-games-history-double-overtime-games-011213#tab=photo-title=2012+AFC+Playoffs%253A+Ravens+38%252C+Broncos+35&amp;photo=31533269">six double-overtime games</a> in NFL history; one of them was <a href="https://twitter.com/NFLScoreBot/status/290276493752406016">this week</a>. Thankfully, it was a quick fix.
-
-</p>
-<p>Laziness really does catch up to you. Some of these problems were things I would be unlikely to catch; the second problem came down to a single use of <code>&lt;</code> instead of <code>&lt;=</code>. 
-
-</p>
-<p>The others, though, were things I knew about. I though I could get away with them for just one more season. Then I&#39;d fix it.
-
-</p>
-<p>I couldn&#39;t.
-
-</p>
-<p>Discuss this post <a href="http://news.ycombinator.com/item?id=5057028">on Hacker News</a>.</p>
-
-<br/>
-<span> -- January 14, 2013 &middot; <a href="https://twitter.com/dpearson_"><img src="http://dpearson.me/blog/res/Twitter.png" class="network-icon"></a> &middot; <a href="https://plus.google.com/115101813330671794387/posts"><img src="http://dpearson.me/blog/res/GooglePlus.png" class="network-icon"></a> &middot; <a href="https://alpha.app.net/dpearson"><img src="http://dpearson.me/blog/res/App.net.png" class="network-icon"></a> &middot; <a href="mailto:dpearson@dpearson.me"><img src="http://dpearson.me/blog/res/Email.png" class="network-icon"></a> &middot; <a href="http://dpearson.me/blog/feed.rss"><img src="http://dpearson.me/blog/res/RSS.png" class="network-icon"></a></span>
 <br/>
 <br/>
 		</div>
