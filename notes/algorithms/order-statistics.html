@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Order Statistics</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Order Statistics</h1>
+</div>
+<p><strong>Goal</strong>: Select the <span class="math inline">\(i^{th}\)</span> smallest of <span class="math inline">\(n\)</span> elements, which is the element with rank <span class="math inline">\(i\)</span>.</p>
+<ul>
+<li>Minimum: <span class="math inline">\(i = 1\)</span></li>
+<li>Maximum: <span class="math inline">\(i = n\)</span></li>
+<li>Median: <span class="math inline">\(i = floor(\frac{n+1}{2})\)</span> or <span class="math inline">\(i = ceil(\frac{n+1}{2})\)</span></li>
+</ul>
+<p>A naive algorithm: sort the array, then select the <span class="math inline">\(i^{th}\)</span> element. If we use merge sort or heapsort, this algorithm takes <span class="math inline">\(\Theta(n \log{n}) + \Theta(1) = \Theta(n \log{n})\)</span> time.</p>
+<h2 id="finding-the-minimum-and-maximum">Finding the Minimum and Maximum</h2>
+<p>We can find the minimum and maximum individually in <span class="math inline">\(O(n)\)</span> comparisons, so, by extension, we can find both in <span class="math inline">\(O(2n)\)</span> comparisons (specifically, <span class="math inline">\(2n - 2\)</span> comparisons).</p>
+<p>However, we can improve on this algorithm with the following:</p>
+<ol style="list-style-type: decimal">
+<li>Make <span class="math inline">\(ceil(\frac{n}{2})\)</span> pairwise comparisons (compare A[1] with A[2], A[3] with A[4], etc.).</li>
+<li>Make <span class="math inline">\(ceil(\frac{n}{2})\)</span> comparisons to find both the minimum and maximum.</li>
+</ol>
+<p>Example: [2, 1, 0, 5, …, 7, 9]</p>
+<table style="width:72%;">
+<colgroup>
+<col width="8%" />
+<col width="16%" />
+<col width="16%" />
+<col width="8%" />
+<col width="8%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>A[1] A[2]</th>
+<th>A[3] A[4]</th>
+<th>…</th>
+<th>A[n -</th>
+<th>1] A[n]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>min</p></td>
+<td><p>A[2]</p></td>
+<td><p>A[3]</p></td>
+<td><p>…</p></td>
+<td><p>A[n -</p></td>
+<td><p>1]</p></td>
+</tr>
+<tr class="even">
+<td><p>max</p></td>
+<td><p>A[1]</p></td>
+<td><p>A[4]</p></td>
+<td><p>…</p></td>
+<td><p>A[n]</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We can then compare all of the elements in the first row to determine the minimum (A[3] = 0) and all of the elements in the second row to determine the maximum (A[n] = 9).</p>
+<h2 id="finding-the-2nd-smallest-element">Finding the 2nd Smallest Element</h2>
+<p>We can divide the array into two parts and find the two smallest elements in each, at a cost of <span class="math inline">\(T(n) = 2T(\frac{n}{2}) + 2\)</span>.</p>
+<h2 id="a-general-algorithm">A General Algorithm</h2>
+<pre><code>order-stat(array, i) {
+    pick a pivot value v
+    partition array into three parts: // n comparisons
+        A = {x | x &lt; v}
+        B = {y | y = v}
+        C = {z | z &gt; v}
+    
+    if i &lt;= |A|, return order-stat(A, i)
+    if i &gt; |A| and i &lt;= |A| + |B|, return v
+    it i &gt; |A| + |B|, return order-stat(C, i - |A| - |B|)
+}</code></pre>
+<p>For this algorithm, <span class="math inline">\(T(n) = n + max(T(|A|, |C|))\)</span> in the general case. In the worst case, this recurrence becomes <span class="math inline">\(T(n) = n + T(n - 1) = O(n^2)\)</span>, but it will be a much better <span class="math inline">\(T(n) = n + T(\frac{3n}{4}) = O(4n)\)</span> if <span class="math inline">\(|A| \text{ or } |C| &lt; \frac{3n}{4}\)</span>.</p>
+<p>Therefore, we want to repeatedly pick a pivot value randomly until both <span class="math inline">\(|A| \text{ and } |C| &lt; \frac{3n}{4}\)</span>. If we do that, <span class="math inline">\(T(n) = 2n + T(\frac{3n}{4}) = O(8n)\)</span>, since we will partition the array twice in expection before achieving the desired balance.</p>
+<p><strong>Proof</strong>:</p>
+<p><span class="math inline">\(T(n) = T(\alpha n) + c n\)</span></p>
+<p><span class="math inline">\(0 &lt; \alpha &lt; 1\)</span></p>
+<p><span class="math inline">\(c \text{ constant}\)</span></p>
+<p>Assume <span class="math inline">\(T(n) \leq d n\)</span>.</p>
+<p>Then,</p>
+<p><span class="math inline">\(d \alpha n + cn = (d \alpha + c) n \leq d n\)</span></p>
+<p><span class="math inline">\(d \alpha + c \leq d\)</span></p>
+<p><span class="math inline">\(c \leq d(1 - \alpha)\)</span></p>
+<p><span class="math inline">\(d \geq \frac{c}{1 - \alpha}\)</span>.</p>
+<h2 id="a-deterministic-algorithm">A Deterministic Algorithm</h2>
+<pre><code>select(i, n) {
+    // running time: 10 * ceil(n/5)
+    divide the n elements into groups of 5, and find the median of each group by rote
+
+    // running time: T(floor(n / 5))
+    recursively select the median x of the floor(n/5) group medians as the pivot
+
+    // running time: n
+    partition the array around the pivot x
+    let k = rank(x)
+
+    if i = k, return x
+    if i &lt; k, return select(i, lower-part)
+    if i &gt; k, return select(i - k, upper-part)
+}</code></pre>
+<p>For this algorithm, <span class="math inline">\(T(n) = 2n + T(\frac{n}{5}) + max(T(|A|), T(|C|))\)</span>. Since <span class="math inline">\(|A| \text{ and } |C| \geq \frac{3n}{10}\)</span>, <span class="math inline">\(max(T(|A|), T(|C|)) \leq \frac{7n}{10}\)</span>.</p>
+<p><span class="math inline">\(T(n) = T(\alpha n) + T(\beta n) + c n\)</span>, where <span class="math inline">\(\alpha + \beta &lt; 1, 0 &lt; \alpha, \beta &lt; 1, \alpha, \beta, c \text{ constant} \implies T(n) O(n)\)</span></p>
+<h2 id="example-matching-nuts-and-bolts">Example: Matching Nuts and Bolts</h2>
+<p><strong>input</strong>: <span class="math inline">\(n\)</span> bolts, <span class="math inline">\(n\)</span> nuts of different sizes.</p>
+<p><strong>goal</strong>: pair them, with minimal matching effort, such that bolts and nuts fit each other.</p>
+<pre><code>alg(nuts, bolts) {
+    pick a nut
+    for i = 1 to n, find a bolt that fits the nut and partition the nuts into A &lt; nut and C &gt; nut
+    for i = 1 to n, use the bolt to partition the nuts into A&#39; &lt; bolt and C&#39; &gt; bolt
+
+    alg(A, A&#39;)
+    alg(C, C&#39;)
+}</code></pre>
+<p><span class="math inline">\(T(n) = n + n + T(|A|) + T(|C|) = O(n \log{n})\)</span> with randomization to bound <span class="math inline">\(|A|\)</span> and <span class="math inline">\(|C|\)</span> at <span class="math inline">\(\frac{3n}{4}\)</span>.</p>
+<h2 id="example-databases">Example: Databases</h2>
+<p><strong>input</strong>: <span class="math inline">\(k\)</span> databases <span class="math inline">\(D_1, D_2, ..., D_k\)</span>, with all records in <span class="math inline">\(D_i\)</span> sorted.</p>
+<p><strong>goal</strong>: find the median of <span class="math inline">\(\bigcup\limits_{i=1}^{k} D_i\)</span> with the minimal number of calls.</p>
+<p><span class="math inline">\(\text{let} find(D_i, j) = \text{find } j^{th} \text{ item in } D_i\)</span></p>
+<p>Algorithm: drop elements smaller than the smallest median, adjust the index accordingly, and recurse.</p>
+</body>
+</html>
