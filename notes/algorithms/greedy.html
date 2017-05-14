@@ -6,6 +6,7 @@
   <meta name="generator" content="pandoc" />
   <title>Greedy Algorithms</title>
   <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
 </head>
 <body>
 <div id="header">
@@ -18,24 +19,24 @@
 </ol>
 <p>We will often use an exchange argument to prove the optimality of solutions produced by a greedy algorithm.</p>
 <h2 id="interval-scheduling">Interval Scheduling</h2>
-<p>Input: A set of jobs, where job <span class="math inline"><em>j</em></span> starts at <span class="math inline"><em>s</em><sub><em>j</em></sub></span> and finishes at <span class="math inline"><em>f</em><sub><em>j</em></sub></span>. Two jobs are compatible if they do not overlap.</p>
-<p>Goal: Find the maximum subset of mutually compatible jobs – <span class="math inline"><em>m</em><em>a</em><em>x</em><sub><em>s</em></sub>∑<sub><em>i</em> ∈ <em>s</em></sub><em>w</em><sub><em>i</em></sub></span>.</p>
+<p>Input: A set of jobs, where job <span class="math inline">\(j\)</span> starts at <span class="math inline">\(s_j\)</span> and finishes at <span class="math inline">\(f_j\)</span>. Two jobs are compatible if they do not overlap.</p>
+<p>Goal: Find the maximum subset of mutually compatible jobs – <span class="math inline">\(max_s \sum_{i \in s} w_i\)</span>.</p>
 <h3 id="general-approach">General Approach</h3>
 <ol style="list-style-type: decimal">
 <li>Sort all jobs in increasing order of deadlines.</li>
-<li><span class="math inline"><em>o</em><em>p</em><em>t</em>(<em>S</em><sub><em>i</em></sub>)←best value we can get out of <em>S</em><sub><em>i</em></sub></span>.</li>
-<li><span class="math inline"><em>o</em><em>p</em><em>t</em>(<em>S</em><sub><em>n</em></sub>)=optimal solution</span>.</li>
+<li><span class="math inline">\(opt(S_i) \leftarrow \text{best value we can get out of } S_i\)</span>.</li>
+<li><span class="math inline">\(opt(S_n) = \text{optimal solution}\)</span>.</li>
 </ol>
-<p>So, <span class="math inline"><em>o</em><em>p</em><em>t</em>(<em>S</em><sub><em>i</em> + 1</sub>)=<em>m</em><em>a</em><em>x</em>(<em>w</em><sub><em>i</em> + 1</sub> + <em>o</em><em>p</em><em>t</em>(<em>S</em><sub><em>j</em></sub>)∣<em>d</em><sub><em>j</em></sub> ≤ <em>s</em><sub><em>i</em> + 1</sub>, <em>o</em><em>p</em><em>t</em>(<em>S</em><sub><em>i</em></sub>))</span>.</p>
+<p>So, <span class="math inline">\(opt(S_{i+1}) = max(w_{i+1} + opt(S_j) \mid d_j \le s_{i+1}, opt(S_i))\)</span>.</p>
 <h3 id="a-greedy-solution">A Greedy Solution</h3>
 <p>We have a couple of different possible priorities:</p>
 <ol style="list-style-type: decimal">
-<li>Earliest start time <span class="math inline"><em>s</em><sub><em>j</em></sub></span>.</li>
-<li>Earliest finish time <span class="math inline"><em>f</em><sub><em>j</em></sub></span>.</li>
-<li>Shortest interval <span class="math inline"><em>p</em><sub><em>j</em></sub> = <em>f</em><sub><em>j</em></sub> − <em>s</em><sub><em>j</em></sub></span>.</li>
-<li>Minimum number of conflicts <span class="math inline"><em>n</em><sub><em>j</em></sub></span>.</li>
+<li>Earliest start time <span class="math inline">\(s_j\)</span>.</li>
+<li>Earliest finish time <span class="math inline">\(f_j\)</span>.</li>
+<li>Shortest interval <span class="math inline">\(p_j = f_j - s_j\)</span>.</li>
+<li>Minimum number of conflicts <span class="math inline">\(n_j\)</span>.</li>
 </ol>
-<p>Of these possible priorities, only using the finish time <span class="math inline"><em>f</em><sub><em>j</em></sub></span> will yield a correct solution.</p>
+<p>Of these possible priorities, only using the finish time <span class="math inline">\(f_j\)</span> will yield a correct solution.</p>
 <pre><code>alg(n, s1...sn, f1...fn) {
     sort jobs by finish time so f1 &lt;= f2 &lt;= ... &lt;= fn
 
@@ -46,23 +47,23 @@
 
     return A
 }</code></pre>
-<p>This algorithm can be implemented in <span class="math inline"><em>O</em>(<em>n</em><em>l</em><em>o</em><em>g</em>(<em>n</em>))</span> time:</p>
+<p>This algorithm can be implemented in <span class="math inline">\(O(n log(n))\)</span> time:</p>
 <ul>
-<li>Keep track of job <span class="math inline"><em>j</em><sup>*</sup></span> last added to <span class="math inline"><em>A</em></span>.</li>
-<li>A job <span class="math inline"><em>j</em></span> is compatible with <span class="math inline"><em>A</em></span> iff <span class="math inline"><em>s</em><sub><em>j</em></sub> ≥ <em>f</em><sub><em>j</em><sup>*</sup></sub></span>.</li>
-<li>Sorting the list of jobs takes <span class="math inline"><em>O</em>(<em>n</em><em>l</em><em>o</em><em>g</em>(<em>n</em>))</span> time.</li>
+<li>Keep track of job <span class="math inline">\(j^*\)</span> last added to <span class="math inline">\(A\)</span>.</li>
+<li>A job <span class="math inline">\(j\)</span> is compatible with <span class="math inline">\(A\)</span> iff <span class="math inline">\(s_j \ge f_{j^*}\)</span>.</li>
+<li>Sorting the list of jobs takes <span class="math inline">\(O(n log(n))\)</span> time.</li>
 </ul>
 <h3 id="proof-of-correctness">Proof of Correctness</h3>
 <p>First, we assume that the greedy algorithm is not optimal.</p>
-<p>let <span class="math inline"><em>i</em><sub>1</sub>, <em>i</em><sub>2</sub>, ..., <em>i</em><sub><em>n</em></sub></span> denote the list of jobs selected by the greedy algorithm. let <span class="math inline"><em>j</em><sub>1</sub>, <em>j</em><sub>2</sub>, ..., <em>j</em><sub><em>m</em></sub></span> denote the list of jobs selected in an optimal solution, with <span class="math inline"><em>i</em><sub>1</sub> = <em>j</em><sub>1</sub>, <em>i</em><sub>2</sub> = <em>j</em><sub>2</sub>, ..., <em>i</em><sub><em>r</em></sub> = <em>j</em><sub><em>r</em></sub></span> for the largest possible value of <span class="math inline"><em>r</em></span>.</p>
-<p>If job <span class="math inline"><em>i</em><sub><em>r</em> + 1</sub></span> exists and finishes before <span class="math inline"><em>j</em><sub><em>r</em> + 1</sub></span>, we can replace job <span class="math inline"><em>j</em><sub><em>r</em> + 1</sub></span> with job i_{r+1}. This solution will still be optimal, but this exchange creates a contradiction: it implies that <span class="math inline"><em>r</em></span> was not the maximum such index.</p>
+<p>let <span class="math inline">\(i_1, i_2, ..., i_n\)</span> denote the list of jobs selected by the greedy algorithm. let <span class="math inline">\(j_1, j_2, ..., j_m\)</span> denote the list of jobs selected in an optimal solution, with <span class="math inline">\(i_1 = j_1, i_2 = j_2, ..., i_r = j_r\)</span> for the largest possible value of <span class="math inline">\(r\)</span>.</p>
+<p>If job <span class="math inline">\(i_{r+1}\)</span> exists and finishes before <span class="math inline">\(j_{r+1}\)</span>, we can replace job <span class="math inline">\(j_{r+1}\)</span> with job i_{r+1}. This solution will still be optimal, but this exchange creates a contradiction: it implies that <span class="math inline">\(r\)</span> was not the maximum such index.</p>
 <h2 id="huffman-coding">Huffman Coding</h2>
-<p>Huffman coding gives prefix-free codes needed when using variable length codewords; we want to select these codes such that the total message length is minimized: <span class="math inline"><em>m</em><em>i</em><em>n</em>∑<em>p</em>(<em>i</em>)<em>f</em><sub><em>i</em></sub></span>, where <span class="math inline"><em>p</em>(<em>i</em>)=size of codeword for <em>i</em></span> and <span class="math inline"><em>f</em><sub><em>i</em></sub> = frequency of word <em>i</em></span>. So, a higher <span class="math inline"><em>f</em><sub><em>i</em></sub></span> implies a lower $p(i).</p>
+<p>Huffman coding gives prefix-free codes needed when using variable length codewords; we want to select these codes such that the total message length is minimized: <span class="math inline">\(min \sum p(i) f_i\)</span>, where <span class="math inline">\(p(i) = \text{size of codeword for } i\)</span> and <span class="math inline">\(f_i = \text{frequency of word } i\)</span>. So, a higher <span class="math inline">\(f_i\)</span> implies a lower $p(i).</p>
 <p>To construct these codes, we can map codewords to a binary tree. Initially, each codeword is an individual leaf node; then, we greedily combine the least frequent trees until all codewords are included in the tree.</p>
 <h3 id="proof-of-optimality">Proof of Optimality</h3>
 <p>A proof of the optimality of the Huffman coding algorithm can be found <a href="http://www.cs.utoronto.ca/~brudno/csc373w09/huffman.pdf">here</a>.</p>
 <h2 id="minimum-spanning-tree">Minimum Spanning Tree</h2>
-<p>The minimum spanning tree for a graph <span class="math inline"><em>G</em>(<em>V</em>, <em>E</em>)</span> is the tree <span class="math inline"><em>T</em></span> containing all vertices in <span class="math inline"><em>V</em></span> with the minimum weight <span class="math inline"><em>w</em> = ∑<sub><em>e</em> ∈ <em>E</em>′</sub><em>w</em>(<em>e</em>)</span>.</p>
+<p>The minimum spanning tree for a graph <span class="math inline">\(G(V, E)\)</span> is the tree <span class="math inline">\(T\)</span> containing all vertices in <span class="math inline">\(V\)</span> with the minimum weight <span class="math inline">\(w = \sum_{e \in E&#39;} w(e)\)</span>.</p>
 <h3 id="general-rules">General Rules</h3>
 <p>There are two properties that the following algorithms rely on:</p>
 <ol style="list-style-type: decimal">
@@ -71,14 +72,14 @@
 </ol>
 <p>Both of these properties can be proved by contradiction.</p>
 <h3 id="prims-algorithm">Prim’s Algorithm</h3>
-<p>Start with a single vertex <span class="math inline"><em>v</em> ∈ <em>V</em></span>, then repeatedly add outgoing edges <span class="math inline"><em>e</em> ∈ <em>E</em></span> with the minimum weight until all vertices are included in the tree.</p>
+<p>Start with a single vertex <span class="math inline">\(v \in V\)</span>, then repeatedly add outgoing edges <span class="math inline">\(e \in E\)</span> with the minimum weight until all vertices are included in the tree.</p>
 <h3 id="kruskals-algorithm">Kruskal’s Algorithm</h3>
-<p>Repeatedly add edges <span class="math inline"><em>e</em> ∈ <em>E</em></span> with the minimum weight (that do not introduce a cycle) until all vertices are included in the tree.</p>
+<p>Repeatedly add edges <span class="math inline">\(e \in E\)</span> with the minimum weight (that do not introduce a cycle) until all vertices are included in the tree.</p>
 <h3 id="reverse-delete-algorithm">Reverse-Delete Algorithm</h3>
-<p>Repeatedly remove edges <span class="math inline"><em>e</em> ∈ <em>E</em></span> with the maximum weight (that do not make the graph disconnected) until no such edges can be removed.</p>
+<p>Repeatedly remove edges <span class="math inline">\(e \in E\)</span> with the maximum weight (that do not make the graph disconnected) until no such edges can be removed.</p>
 <h3 id="an-example">An Example</h3>
-<p>Input: A list of <span class="math inline"><em>n</em></span> people to invite to a party.</p>
-<p>Goal: Maximize the party size, where a candidate <span class="math inline"><em>i</em></span> may be invited only if <span class="math inline"><em>i</em></span> knows at least 6 other people attending the party and <span class="math inline"><em>i</em></span> does not know at least other 6 people attending the party.</p>
+<p>Input: A list of <span class="math inline">\(n\)</span> people to invite to a party.</p>
+<p>Goal: Maximize the party size, where a candidate <span class="math inline">\(i\)</span> may be invited only if <span class="math inline">\(i\)</span> knows at least 6 other people attending the party and <span class="math inline">\(i\)</span> does not know at least other 6 people attending the party.</p>
 <p>Solution: Repeatedly remove people who do not satisfy the inclusion criteria until no such person can be removed.</p>
 <h2 id="slides">Slides</h2>
 <ul>
